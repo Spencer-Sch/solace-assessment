@@ -61,15 +61,23 @@ export default function Home() {
   return (
     <main className="m-[24px]">
       <h1 className="text-4xl font-bold">Solace Advocates</h1>
-      <div className="my-10">
+      <div className="my-10 space-y-4">
         <h2 className="text-2xl font-semibold">Search</h2>
-        <p>Searching for: {searchTerm}</p>
-        <input
-          style={{ border: "1px solid black" }}
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-        <button onClick={resetSearch}>Reset Search</button>
+        <form className="flex flex-col space-y-2 w-fit">
+          <div className="flex space-x-2">
+            <input
+              id="search-term"
+              name="search-term"
+              placeholder="type search here..."
+              style={{ border: "1px solid black" }}
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+            <button onClick={resetSearch}>Reset Search</button>
+          </div>
+
+          <p>Searching for: {searchTerm}</p>
+        </form>
       </div>
       <table>
         <thead>
