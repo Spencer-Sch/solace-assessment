@@ -15,6 +15,7 @@ type Advocate = {
 export default function Home() {
   const [advocates, setAdvocates] = useState<Advocate[]>([]);
   const [filteredAdvocates, setFilteredAdvocates] = useState<Advocate[]>([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     console.log("fetching advocates...");
@@ -26,25 +27,24 @@ export default function Home() {
     });
   }, []);
 
-  const onChange = (e) => {
-    const searchTerm = e.target.value;
+  useEffect(() => {
+    const filterAdvocates = () => {
+      console.log("filtering advocates...");
+      const filteredAdvocates = advocates.filter((advocate) => {
+        return (
+          advocate.firstName.includes(searchTerm) ||
+          advocate.lastName.includes(searchTerm) ||
+          advocate.city.includes(searchTerm) ||
+          advocate.degree.includes(searchTerm) ||
+          advocate.specialties.includes(searchTerm)
+          // advocate.yearsOfExperience.includes(searchTerm)
+        );
+      });
 
-    document.getElementById("search-term").innerHTML = searchTerm;
-
-    console.log("filtering advocates...");
-    const filteredAdvocates = advocates.filter((advocate) => {
-      return (
-        advocate.firstName.includes(searchTerm) ||
-        advocate.lastName.includes(searchTerm) ||
-        advocate.city.includes(searchTerm) ||
-        advocate.degree.includes(searchTerm) ||
-        advocate.specialties.includes(searchTerm) ||
-        advocate.yearsOfExperience.includes(searchTerm)
-      );
-    });
-
-    setFilteredAdvocates(filteredAdvocates);
-  };
+      setFilteredAdvocates(filteredAdvocates);
+    };
+    filterAdvocates();
+  }, [searchTerm, advocates]);
 
   const onClick = () => {
     console.log(advocates);
@@ -58,10 +58,12 @@ export default function Home() {
       <br />
       <div>
         <p>Search</p>
-        <p>
-          Searching for: <span id="search-term"></span>
-        </p>
-        <input style={{ border: "1px solid black" }} onChange={onChange} />
+        <p>Searching for: {searchTerm}</p>
+        <input
+          style={{ border: "1px solid black" }}
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
         <button onClick={onClick}>Reset Search</button>
       </div>
       <br />
