@@ -41,7 +41,9 @@ export default function Home() {
           advocate.lastName.toLowerCase().includes(searchTerm.toLowerCase()) ||
           advocate.city.toLowerCase().includes(searchTerm.toLowerCase()) ||
           advocate.degree.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          advocate.specialties.includes(searchTerm) ||
+          advocate.specialties.some((speciality) =>
+            speciality.toLowerCase().includes(searchTerm),
+          ) ||
           advocate.yearsOfExperience.toString().includes(searchTerm)
         );
       });
