@@ -61,8 +61,6 @@ export default function Home() {
   return (
     <main style={{ margin: "24px" }}>
       <h1>Solace Advocates</h1>
-      <br />
-      <br />
       <div>
         <p>Search</p>
         <p>Searching for: {searchTerm}</p>
@@ -73,8 +71,6 @@ export default function Home() {
         />
         <button onClick={resetSearch}>Reset Search</button>
       </div>
-      <br />
-      <br />
       <table>
         <thead>
           <tr>
