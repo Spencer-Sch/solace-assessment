@@ -61,7 +61,7 @@ export default function Home() {
   return (
     <main className="m-[24px]">
       <h1 className="text-4xl font-bold">Solace Advocates</h1>
-      <div>
+      <div className="my-10">
         <h2 className="text-2xl font-semibold">Search</h2>
         <p>Searching for: {searchTerm}</p>
         <input
