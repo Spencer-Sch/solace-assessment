@@ -87,13 +87,13 @@ export default function Home() {
       <table>
         <thead>
           <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>City</th>
-            <th>Degree</th>
-            <th>Specialties</th>
-            <th>Years of Experience</th>
-            <th>Phone Number</th>
+            <th className="min-w-[100px] text-left">First Name</th>
+            <th className="min-w-[100px] text-left">Last Name</th>
+            <th className="min-w-[150px] text-left">City</th>
+            <th className="min-w-[100px] text-left">Degree</th>
+            <th className="min-w-[600px] text-left">Specialties</th>
+            <th className="min-w-[175px] text-left">Years of Experience</th>
+            <th className="min-w-[100px] text-left">Phone Number</th>
           </tr>
         </thead>
         <tbody>
