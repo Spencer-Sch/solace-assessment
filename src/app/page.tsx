@@ -85,7 +85,7 @@ export default function Home() {
               <td>{advocate.degree}</td>
               <td>
                 {advocate.specialties.map((s) => (
-                  <div>{s}</div>
+                  <div key={s}>{s}</div>
                 ))}
               </td>
               <td>{advocate.yearsOfExperience}</td>
