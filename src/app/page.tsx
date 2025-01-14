@@ -41,8 +41,8 @@ export default function Home() {
           advocate.lastName.includes(searchTerm) ||
           advocate.city.includes(searchTerm) ||
           advocate.degree.includes(searchTerm) ||
-          advocate.specialties.includes(searchTerm)
-          // advocate.yearsOfExperience.includes(searchTerm)
+          advocate.specialties.includes(searchTerm) ||
+          advocate.yearsOfExperience.toString().includes(searchTerm)
         );
       });
 
