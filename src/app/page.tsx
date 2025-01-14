@@ -73,7 +73,12 @@ export default function Home() {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
-            <button onClick={resetSearch}>Reset Search</button>
+            <button
+              className="px-3 border border-solid border-black"
+              onClick={resetSearch}
+            >
+              Reset Search
+            </button>
           </div>
 
           <p>Searching for: {searchTerm}</p>
