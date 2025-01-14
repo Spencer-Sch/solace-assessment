@@ -63,7 +63,10 @@ export default function Home() {
       <h1 className="text-4xl font-bold">Solace Advocates</h1>
       <div className="my-10 space-y-4">
         <h2 className="text-2xl font-semibold">Search</h2>
-        <form className="flex flex-col space-y-2 w-fit">
+        <form
+          className="flex flex-col space-y-2 w-fit"
+          onSubmit={(e) => e.preventDefault()}
+        >
           <div className="flex space-x-2">
             <input
               id="search-term"
@@ -74,6 +77,7 @@ export default function Home() {
               onChange={(e) => setSearchTerm(e.target.value)}
             />
             <button
+              type="button"
               className="px-3 border border-solid border-black"
               onClick={resetSearch}
             >
