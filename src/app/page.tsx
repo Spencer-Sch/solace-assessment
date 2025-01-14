@@ -69,7 +69,7 @@ export default function Home() {
               id="search-term"
               name="search-term"
               placeholder="type search here..."
-              style={{ border: "1px solid black" }}
+              className="p-1 border border-solid border-black"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
