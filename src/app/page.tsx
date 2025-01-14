@@ -59,7 +59,7 @@ export default function Home() {
   };
 
   return (
-    <main className="m-8">
+    <main className="m-[24px]">
       <h1>Solace Advocates</h1>
       <div>
         <p>Search</p>
