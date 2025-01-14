@@ -62,7 +62,7 @@ export default function Home() {
     <main className="m-[24px]">
       <h1 className="text-4xl font-bold">Solace Advocates</h1>
       <div>
-        <p>Search</p>
+        <h2 className="text-2xl font-semibold">Search</h2>
         <p>Searching for: {searchTerm}</p>
         <input
           style={{ border: "1px solid black" }}
