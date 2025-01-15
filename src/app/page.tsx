@@ -59,32 +59,45 @@ export default function Home() {
   };
 
   return (
-    <main style={{ margin: "24px" }}>
-      <h1>Solace Advocates</h1>
-      <br />
-      <br />
-      <div>
-        <p>Search</p>
-        <p>Searching for: {searchTerm}</p>
-        <input
-          style={{ border: "1px solid black" }}
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-        <button onClick={resetSearch}>Reset Search</button>
+    <main className="m-[24px]">
+      <h1 className="text-4xl font-bold">Solace Advocates</h1>
+      <div className="my-10 space-y-4">
+        <h2 className="text-2xl font-semibold">Search</h2>
+        <form
+          className="flex flex-col space-y-2 w-fit"
+          onSubmit={(e) => e.preventDefault()}
+        >
+          <div className="flex space-x-2">
+            <input
+              id="search-term"
+              name="search-term"
+              placeholder="type search here..."
+              className="p-1 border border-solid border-black"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+            <button
+              type="button"
+              className="px-3 border border-solid border-black"
+              onClick={resetSearch}
+            >
+              Reset Search
+            </button>
+          </div>
+
+          <p>Searching for: {searchTerm}</p>
+        </form>
       </div>
-      <br />
-      <br />
       <table>
         <thead>
           <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>City</th>
-            <th>Degree</th>
-            <th>Specialties</th>
-            <th>Years of Experience</th>
-            <th>Phone Number</th>
+            <th className="min-w-[100px] text-left">First Name</th>
+            <th className="min-w-[100px] text-left">Last Name</th>
+            <th className="min-w-[150px] text-left">City</th>
+            <th className="min-w-[100px] text-left">Degree</th>
+            <th className="min-w-[600px] text-left">Specialties</th>
+            <th className="min-w-[175px] text-left">Years of Experience</th>
+            <th className="min-w-[100px] text-left">Phone Number</th>
           </tr>
         </thead>
         <tbody>
